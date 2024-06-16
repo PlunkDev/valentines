@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will you be my valentine?</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="image">
+            <center><img src="main.gif" alt="" id="photo"></center>
+            <p id="text">Will you be my valentine?</p>
+        </div>
+        <div class="buttons">
+            <button id="YES" onclick="yipeee()">
+                Yes
+            </button>
+            <span id="or">or</span>
+            <button id="NO" onclick="hellnah()">
+                No
+            </button>
+            <iframe src="" allow="autoplay" style="display:none" id="iframeAudio">
+            </iframe>
+        </div>
+    </div>
+
+    <script>
+        let yes = document.getElementById("YES");
+        let no = document.getElementById("NO");
+        let photo = document.getElementById("photo");
+        let text = document.getElementById("text");
+        let body = document.body;
+        let or = document.getElementById("or");
+        let sound = document.getElementById("iframeAudio");
+
+        let size = 15;
+        let clicks = 0; 
+        let oho = 0;
+
+        var messages = Array(
+        "Are u sure?",
+        "Are u 100% sure?", 
+        "Do you confirm this 100%?", 
+        "I love you so much pleasee", 
+        "You know i love you", 
+        "You wouldn't regret it", 
+        "if not i'll be sad", 
+        "Im really sad...", 
+        "Im really really sad...", 
+        "Im really really really sad...", 
+        "Okay, i'll stop now...", 
+        "JUST JOKING, PLEASE CLICK YES", 
+        "You broke my heart :(", 
+        "No");
+        var indexTXT = 0;
+
+        function hellnah() {
+            if(oho==0){
+            if(clicks!=20){
+            if(indexTXT<messages.length){
+                no.innerHTML = messages[indexTXT];
+                indexTXT++;
+            } else{
+                indexTXT = 0;
+                no.innerHTML = messages[indexTXT];
+            }
+            size = size * 1.5;
+            if(yes.style.fontSize==""){
+                yes.style.fontSize="15px";
+            }  
+            yes.style.fontSize = parseFloat(yes.style.fontSize)+15+"px";
+            clicks++;
+            console.log(clicks);
+            } else{
+                yes.innerHTML = "English";
+                no.innerHTML = "Spanish";
+                yes.style.fontSize = "15px";
+                body.style.background = "black";
+                body.style.color = "white";
+                text.style.display = "none";
+                photo.style.display = "none";
+                oho = 1;
+                sound.src = "ambient.mp3";
+            }} else{
+                yes.style.display = "none";
+                no.style.display = "none";
+                text.style.display = "block";
+                text.innerHTML = "El que se mueve primero es gay...";
+                photo.style.display = "block";
+                photo.src = "gay.jpg";
+                or.style.display = "none";
+                sound.src = "gay.mp3";
+            }
+
+        }
+
+        function yipeee(){
+            if(clicks!=20){
+            yes.style.display = "none";
+            no.style.display = "none";
+            text.innerHTML = "I love you! <3";
+            photo.src = "yes.gif";
+            or.style.display = "none";
+            sound.src = "yippee.mp3";
+        } else {
+            yes.style.display = "none";
+            no.style.display = "none";
+            text.style.display = "block";
+            text.innerHTML = "Whoever moves first is gay...";
+            photo.style.display = "block";
+            photo.src = "gay.jpg";
+            or.style.display = "none";
+            sound.src = "gay.mp3";
+        }}
+    </script>
+</body>
+</html>

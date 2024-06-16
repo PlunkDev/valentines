@@ -1,0 +1,55 @@
+*{
+    margin: 0;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    display: flex;
+}
+
+.wrapper{
+    display:block;
+}
+
+.image img{
+    width: 50%;
+}
+
+p{
+    font-size: 40px;
+    margin: 25px;
+}
+
+button{
+    border: none;
+    font-size: 15px;
+    border-radius: 5px;
+    padding: 5px 10px 5px 10px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+#YES{
+    background-color: rgb(15, 180, 29);
+}
+
+#YES:hover{
+ background-color: rgb(15, 167, 28);
+}
+
+#NO{
+    background-color: rgb(180, 15, 15);
+}
+
+#NO:hover{
+    background-color: rgb(167, 13, 13);
+}
+
+#buttons{
+    display: flex;
+}
